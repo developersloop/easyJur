@@ -12,6 +12,8 @@ class User implements UserInterface{
 
     public function __construct()
     {
+        session_start();
+
         $this->pdo = new PDOConnection();
         $this->connection = $this->pdo->connection();
     }

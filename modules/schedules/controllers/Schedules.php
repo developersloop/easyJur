@@ -36,7 +36,7 @@ class Schedules {
             $nome = $schedule['nome'];
             $descricao = $schedule['description'];
     
-            $sql = "UPDATE schedules SET nome=?, description=?, data_finished=now() WHERE id=?";
+            $sql = "UPDATE schedules SET nome=?, description=?, data_finished=now(), status='Concluído' WHERE id=?";
             
             $stmt= $this->connection->prepare($sql);
             $stmt->execute([$nome, $descricao, $id]);

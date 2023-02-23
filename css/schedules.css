@@ -2,7 +2,9 @@
     border-top: none;
 }
 .schedules-list > .head{
-    float: right;
+    width: inherit;
+    display: flex;
+    flex-flow: row-reverse;
 }
 
 .actions{
@@ -36,7 +38,7 @@
     }
 
     table {
-        zoom: 0.8;
+        zoom: 0.94;
     }
 }
 

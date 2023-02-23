@@ -4,7 +4,6 @@ include './modules/interfaces/UserInterface.php';
 include './modules/users/controllers/User.php';
 include './modules/schedules/controllers/Schedules.php';
 
-use Controllers\SchedulesController\Schedules;
 use Controllers\UserController\User;
 
 session_start();
@@ -18,13 +17,16 @@ class Router {
                     include './modules/users/view/users.view.php';                    
                 break;
                 case '/schedules':
-                    include './modules/schedules/view/schedule.view.php';                    
+                    if($this->guard()) include './modules/schedules/view/schedule.view.php';    
+                    else  header("Location: /");       
+                break;
+                case '/logout?':
+                    $this->logout();                 
                 break;
             }
             
         }
     }
-
 
     public function interceptRequest($from) {
         switch ($from) {
@@ -43,10 +45,12 @@ class Router {
     }
 
     public function logout() {
-        if($_SERVER['REQUEST_URI'] == '/schedules' && !isset($_SESSION['token'])) {
-            session_destroy();
-            header("Location: /"); 
-        }
+        session_destroy();
+        header("Location: /");
+    }
+
+    public function guard() {
+        return isset($_SESSION['token']);     
     }
 }
 ?>

@@ -10,7 +10,15 @@ use Controllers\SchedulesController\Schedules;
 ?>
 <div class="schedules-list">
     <div class="head">
-        <buton class="btn btn-info f-size" data-toggle="modal" data-target="#cadastrarModal">Cadastrar</buton>
+        <button type="submit" class="btn btn-primary f-size" data-toggle="tooltip" data-placement="top" title="Download Excel">
+            <i   class="fa-solid fa-file-excel"></i>            
+        </button>&nbsp;
+        <button type="submit" class="btn btn-primary f-size" data-toggle="tooltip" data-placement="top" title="Download pdf">
+            <i   class="fa-solid fa-file-pdf"></i>            
+        </button>&nbsp;
+        <buton class="btn btn-primary f-size" data-toggle="modal" data-target="#cadastrarModal" title="Cadastrar Agenda">
+            <i class="fa-solid fa-store"></i>
+        </buton>
         <?php include 'modal/create-schedule.php' ?>
     </div>
     <table class="table table-striped">
@@ -55,6 +63,10 @@ use Controllers\SchedulesController\Schedules;
     let id = <?= $_REQUEST['id']?>;
     
     if(id) document.getElementById(`tr-${id}`).remove()
-                 
+                
+    
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
 </script>

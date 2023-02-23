@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    overflow: hidden;
 }
 
 .container-easyjur{
@@ -9,3 +10,20 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.sair{
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+@media (max-width: 576px) {
+   .sair {
+        padding-right: 16px;
+   }
+}
+
+@media (min-width: 577px) {
+    .sair {
+         padding-right: 20px;
+    }
+ }
