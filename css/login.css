@@ -1,4 +1,5 @@
 .form-login{
+    width: -webkit-fill-available;
     display: flex;
     justify-content: center;
     padding: 20px;    

@@ -9,8 +9,9 @@
             <input type="password" class="form-control" id="exampleInputPassword1" name="password">
         </div>
         <div class="form-group">
-            <label class="stretched-link font-weight-lighter" style="color: #007bff">Cadastre-se</label>
+            <label class="stretched-link font-weight-lighter" style="color: #007bff" data-toggle="modal" data-target="#cadastraUser">Cadastre-se</label>
         </div>
         <button type="submit" class="btn btn-primary">Acessar</button>
     </form>
 </div>
+<?php include 'modal/create-user.php' ?>

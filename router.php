@@ -52,5 +52,10 @@ class Router {
     public function guard() {
         return isset($_SESSION['token']);     
     }
+
+    public function storeUser() {
+        $users = new User();
+        $users->storeUser($_REQUEST);
+    }
 }
 ?>

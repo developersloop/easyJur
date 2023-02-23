@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 
     <title>Hello, world!</title>
     <style>
@@ -18,9 +18,11 @@
     </style>
   </head>
   <body>
-    <form action="/logout" method="GET" style="float: right;">
-      <button type="submit" class="sair" style="color: #007bff; cursor: pointer; background: transparent; border-color: transparent">Sair</button>
-    </form>
+    <?php if($_SERVER['REQUEST_URI'] == '/schedules') {?>
+        <form action="/logout" method="GET" style="float: right;">
+          <button type="submit" class="sair" style="color: #007bff; cursor: pointer; background: transparent; border-color: transparent">Sair</button>
+        </form>
+      <?php }?>
     <div class="container-easyjur">
       <?php $router->getTemplate($router); ?>
     </div>
