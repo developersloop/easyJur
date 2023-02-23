@@ -1,0 +1,29 @@
+.form-login{
+    display: flex;
+    justify-content: center;
+    padding: 20px;    
+}
+
+.form{
+   width: 400px;
+}
+
+
+@media (max-width: 576px) {
+    .form-login > .form > .btn-primary{
+        width: -webkit-fill-available;
+    }
+    
+    .form{
+        width: -webkit-fill-available;
+    }
+    .font-weight-lighter, .btn-primary{
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 567px) {
+    .form-login > .form > .btn-primary{
+        width: -webkit-fill-available;
+    }
+}

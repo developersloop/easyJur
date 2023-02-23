@@ -1,0 +1,26 @@
+.schedules-list{
+
+}
+
+@media (max-width: 576px) {
+    .schedules-list{
+        padding: 5px;
+    }
+
+    .f-size{
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .schedules-list{
+        padding: 20px;
+        width: 75vh;
+    }
+}
+
+@media(min-width: 993px) {
+    .schedules-list{
+        width: 100vh;
+    }
+}

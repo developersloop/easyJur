@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+}
+
+.container-easyjur{
+    height: inherit;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
