@@ -4,7 +4,7 @@ use Controllers\SchedulesController\Schedules;
 
     $schedules = new Schedules();
     $empty = !is_array($schedules->getSchedules());
-    $arr = $schedules->getSchedules();
+    $listSchedules = $schedules->getSchedules();
 ?>
 <div class="schedules-list">
     <table class="table table-striped">
@@ -25,10 +25,10 @@ use Controllers\SchedulesController\Schedules;
             </tr>
         <?php }?>
         <?php if(!$empty)  {?>
-            <?php foreach($arr as $key=>$value): ?>
+            <?php foreach($listSchedules as $key=>$schedule): ?>
             <tr>
-                <?php foreach (array_unique($value) as $key => $val): ?>
-                    <td class="f-size"><?= $val; ?></td>
+                <?php foreach (array_unique($schedule) as $key => $value): ?>
+                    <td class="f-size"><?= $value; ?></td>
                 <?php endforeach; ?>
                 <td>
                     <i class="fa-solid fa-pencil" style="cursor: pointer;"></i>&nbsp;&nbsp;
