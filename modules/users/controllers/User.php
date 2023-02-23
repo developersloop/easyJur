@@ -23,7 +23,8 @@ class User implements UserInterface{
     }
     public function login($request) {
         $token = md5($request['password']);
-        return  is_array($this->connection->query("SELECT * from users where token = '$token'")->fetch());
+        $email = $request['email'];
+        return  is_array($this->connection->query("SELECT * from users where email = '$email' and token = '$token'")->fetch());
 
     }
 
