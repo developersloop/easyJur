@@ -1,5 +1,15 @@
-.schedules-list{
+.table td, .table th {
+    border-top: none;
+}
+.schedules-list > .head{
+    float: right;
+}
 
+.actions{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    margin-top: -20px;
 }
 
 @media (max-width: 576px) {
@@ -7,6 +17,13 @@
         padding: 5px;
     }
 
+    .schedules-list > .head{
+        margin: 10px 5px;
+    }
+    
+    table {
+        zoom: 0.8;
+    }
     .f-size{
         font-size: 10px;
     }
@@ -16,6 +33,10 @@
     .schedules-list{
         padding: 20px;
         width: 75vh;
+    }
+
+    table {
+        zoom: 0.8;
     }
 }
 

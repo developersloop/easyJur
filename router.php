@@ -4,6 +4,7 @@ include './modules/interfaces/UserInterface.php';
 include './modules/users/controllers/User.php';
 include './modules/schedules/controllers/Schedules.php';
 
+use Controllers\SchedulesController\Schedules;
 use Controllers\UserController\User;
 
 session_start();
@@ -24,6 +25,7 @@ class Router {
         }
     }
 
+
     public function interceptRequest($from) {
         switch ($from) {
             case 'login':
@@ -32,6 +34,7 @@ class Router {
                     if($users->login($_REQUEST)) {
                         $_SESSION["token"] = md5($_REQUEST['password']);
                         header("Location: /schedules");
+                        die();
                     }
                 }
             break;
